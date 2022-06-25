@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/S.png">
+    <title>Swwwift</title>
+</head>
+<body>
+    <!--Cabeçalho-->
+    <header>
+        <nav>
+            <a href="/" class="logo"><img src="./assets/Swwwift.png" alt="logo"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#"><b>Sobre</b></a></li>
+                <li><a href="#"><b>Projetos</b></a></li>
+                <li><a href="#"><b>Contato</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-------->
+    <main>
+        <section class="meet">
+            <div class="bg-img">
+                <img src="./assets/bg-prog.png" alt="img" srcset="">
+            </div>
+            <div class="about-us">
+                <div class="principal-text">
+                    <h1><span>QUEM SOMOS?</span></h1>
+                </div>
+                <div class="text-about">
+                    <div class="text">
+                        <h3>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="principal-text">
+                <h1><span>VALORES</span></h1>
+            </div>
+        </section>
+        <section>
+            <div class="cards">
+                <div class="card">
+                    <img src="./assets/card-1.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                    <h2><b>Desenvolvimento</b></h2> 
+                    <p>Produzir e arquitetar projetos conforme a necessidade do cliente.</p> 
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/card-2.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                    <h2><b>Eficiência</b></h2> 
+                    <p>A entrega dentro do prazo e maior eficiencia para a entrega da ideia proposta.</p> 
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/card-3.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                    <h2><b>Comunicação</b></h2> 
+                    <p>Dentro da equipe, buscamos conhecer cada um dos nossos desenvolvedores, para aplciar dentro dos projetos</p> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="line">
+    </main>
+    
+    <div class="footer-div">
+        <footer class="footer-distributed">
+            <div class="footer-left">
+                <img src="./assets/Swwwift.png" width="12%">
+                    <h3>S<span>www</span>ift. Startup</h3>
+                    <p class="footer-links">
+                        <a href="#menu-top">Início</a>
+                        |
+                        <a href="#sobre">Sobre</a>
+                        |
+                        <a href="#categorias">Aplicações</a>
+                    </p> 
+                    <a href="https://taubate.sp.senai.br/" style="text-decoration: none;">
+                        <p class="footer-company-name">©Senai Taubaté Félix Guisard</p>
+                    </a>
+                </div>
+                
+                <div class="footer-right">
+                    <!-- Sobre nós -->
+                    <p class="footer-company-about">
+                        <span>Sobre nós</span>
+                        Nós acreditamos que a criatividade capacita a transformação, pessoalmente e profissionalmente em todos os setores. Buscamos bons resultados, não somente pessoais, mas como um todo.<br>
+                        <br>Site desenvolvido por @v1tooR (Github)
+                    <!-- Redes Sociais -->
+                    <div class="footer-icons">
+                        <a href="https://pt-br.facebook.com/senaitaubate/"><img src="./assets/004-facebook.png"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/senai_taubate"><img src="./assets/003-twitter.png"><i class="fa fa-twitter"></i></a>
+                        <a href="https://instagram.com/senaitaubate"><img src="./assets/002-instagram.png"><i class="fa fa-instagram"></i></a>
+                        <a href="https://br.linkedin.com/company/escolasenaitaubate"><img src="./assets/001-linkedin.png"><i class="fa fa-linkedin"></i></a>
+                        
+                    </div> 
+    
+                </div>
+            </footer>
+        </footer>
+    </div>
+        <!--<section class="home-section" id="home">
+            <div class="saudacao">
+                <img src="./assets/saudacao_img.png" alt="img"/>
+            </div>
+            <div class="saudacao-text" >
+                <h1>
+                    Seja<br>Bem vindo!
+                </h1>
+            </div>
+        </section>-->
+    <script>
+    class MobileNavbar {
+        constructor(mobileMenu, navList, navLinks) {
+            this.mobileMenu = document.querySelector(mobileMenu);
+            this.navList = document.querySelector(navList);
+            this.navLinks = document.querySelectorAll(navLinks);
+            this.activeClass = "active";
+
+            this.handleClick = this.handleClick.bind(this);
+        }
+
+        animateLinks() {
+            this.navLinks.forEach((link, index) => {
+            link.style.animation
+                ? (link.style.animation = "")
+                : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+                    index / 7 + 0.3
+                }s`);
+            });
+        }
+
+        handleClick() {
+            this.navList.classList.toggle(this.activeClass);
+            this.mobileMenu.classList.toggle(this.activeClass);
+            this.animateLinks();
+        }
+
+        addClickEvent() {
+            this.mobileMenu.addEventListener("click", this.handleClick);
+        }
+
+        init() {
+            if (this.mobileMenu) {
+            this.addClickEvent();
+            }
+            return this;
+        }
+        }
+
+        const mobileNavbar = new MobileNavbar(
+        ".mobile-menu",
+        ".nav-list",
+        ".nav-list li",
+        );
+        mobileNavbar.init();
+    </script>
+</body>
+</html>
