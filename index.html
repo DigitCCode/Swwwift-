@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="icon" href="./assets/S.png">
     <title>Swwwift</title>
 </head>
 <body>
     <!--Cabeçalho-->
-    <header>
+    <header id="menu-top">
         <nav>
             <a href="/" class="logo"><img src="./assets/Swwwift.png" alt="logo"></a>
             <div class="mobile-menu">
@@ -22,36 +23,42 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="#"><b>Sobre</b></a></li>
-                <li><a href="#"><b>Projetos</b></a></li>
-                <li><a href="#"><b>Contato</b></a></li>
+                <li><a href="#about"><b>Sobre</b></a></li>
+                <li><a href="#aplicativos"><b>Projetos</b></a></li>
+                <li><a href="#footer"><b>Contato</b></a></li>
             </ul>
         </nav>
     </header>
     <!-------->
     <main>
-        <section class="meet">
+        <section class="meet"  >
             <div class="bg-img">
                 <img src="./assets/bg-prog.png" alt="img" srcset="">
             </div>
-            <div class="about-us">
+            <div class="about-us" id="about">
                 <div class="principal-text">
                     <h1><span>QUEM SOMOS?</span></h1>
                 </div>
                 <div class="text-about">
                     <div class="text">
                         <h3>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </h3>
+                            A nossa empresa tem o propósito de criar softwares de desenvolvimento para organização
+                            de sistemas e formalização de ideias para projetos. Também desenvolvemos jogos com intuíto
+                            de conscientização e desenvolvimento pessoal do usuário.
+                            <br><br>
+                            Vamos buscar colocar toda a nossa dedicação nos projetos e na formalização de novas ideias
+                            com o intuito de apoiar o público.
+                         </h3>
                     </div>
                 </div>
             </div>
         
+        </section>
+
+        <section>
             <div class="principal-text">
                 <h1><span>VALORES</span></h1>
             </div>
-        </section>
-        <section>
             <div class="cards">
                 <div class="card">
                     <img src="./assets/card-1.jpg" alt="Avatar" style="width:100%">
@@ -76,23 +83,37 @@
                 </div>
             </div>
         </section>
+
+        <section id="aplicativos">
+            <div class="principal-text">
+                <h1><span>PROJETOS</span></h1>
+            </div>
+            <section class="apps" >
+                <div class="about-app">
+                    <img src="./assets/helpc.png"/>
+                    <div class="text-app">
+                        <h2>Help.C Project</h2>
+                        <p>
+                           Projeto idealizado e construído para a divulgação de instituições, divulgando as suas necessidades e formas de contribuir. 
+                        </p>
+                        <input type="button" class="button button2" value="Acessar"/>
+                    </div>
+                </div>
+            </section>
+        </section>
         <hr class="line">
     </main>
     
-    <div class="footer-div">
+    <div class="footer-div" id="footer">
         <footer class="footer-distributed">
             <div class="footer-left">
                 <img src="./assets/Swwwift.png" width="12%">
                     <h3>S<span>www</span>ift. Startup</h3>
                     <p class="footer-links">
-                        <a href="#menu-top">Início</a>
-                        |
-                        <a href="#sobre">Sobre</a>
-                        |
-                        <a href="#categorias">Aplicações</a>
+                        <a href="#menu-top">Voltar ao início</a>
                     </p> 
                     <a href="https://taubate.sp.senai.br/" style="text-decoration: none;">
-                        <p class="footer-company-name">©Senai Taubaté Félix Guisard</p>
+                        <p class="footer-company-name">©Swwwift</p>
                     </a>
                 </div>
                 
@@ -115,16 +136,7 @@
             </footer>
         </footer>
     </div>
-        <!--<section class="home-section" id="home">
-            <div class="saudacao">
-                <img src="./assets/saudacao_img.png" alt="img"/>
-            </div>
-            <div class="saudacao-text" >
-                <h1>
-                    Seja<br>Bem vindo!
-                </h1>
-            </div>
-        </section>-->
+    
     <script>
     class MobileNavbar {
         constructor(mobileMenu, navList, navLinks) {
@@ -170,6 +182,30 @@
         ".nav-list li",
         );
         mobileNavbar.init();
+
+        $(document).ready(function(){
+            // Adicionar movimento suave a todos os componentes
+            $("a").on('click', function(event) {
+
+                // Verificar se this.hash tem valor
+                if (this.hash !== "") {
+                // Evento padrão do JQuery
+                event.preventDefault();
+
+                // Guardar hash
+                var hash = this.hash;
+
+                // jQuery animate()
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    // Adicionar # ao acessar a tag
+                    window.location.hash = hash;
+                });
+                }
+            });
+        });
     </script>
 </body>
 </html>
